@@ -1,0 +1,34 @@
+//class schedule
+class Schedule{
+   private:
+    	int scheduleNo;
+      	string scheduleName;
+      	string scheduleType;
+      	int sessionId;
+      	string sessionName;
+
+    public:
+    	Schedule();
+    	Schedule(int s_no, string s_name, string s_type);
+    	void displaySchedule();
+    	void setSessionDetails(int s_id, string se_name,Course *c);
+    	void addSession();
+    	~Schedule();
+};
+//class Instructor: class User;
+class Instructor{
+    private:
+        string instructorId;
+        string intructorName;
+        int instructorContactNo;
+		Course *course;//BI-DIRECTIONAL ASSOCIATION
+        
+    public:
+    	Instructor();
+        Instructor(string i_id, string i_name, int i_contactno,Course *c);
+        void displayInstructorDetails();
+        void getparticiipation();
+        void addNewInstructors();
+        void setInstructorActivities();
+        ~Instructor();
+};
