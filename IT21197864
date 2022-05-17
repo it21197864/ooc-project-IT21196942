@@ -1,0 +1,40 @@
+//class Course
+class Course{
+	protected:
+		string courseId;
+		string courseName;
+		string enrollKey;
+		string courseType;
+		string certificateNo;
+		string certificateName;
+		string certificateDate; 
+		Instructor *instructor;//BI-DIRECTIONAL ASSOCIATION
+		Student *student;//BI-DIRECTIONAL ASSOCIATION
+		Resources *resources;//UNI-DIRECTIONAL
+		
+	public:
+		Course();
+		Course(string id, string name, sring key, string type,Instructor *i,Student *s,Resources *r);
+		void displayCourseDetails();
+		void addNewCourses();
+		void genarateCourseCertificate(string id, string name, string type, string c_no, string c_name, string c_date); 
+		~Course();
+};
+
+//class schedule
+class Schedule{
+   private:
+    	int scheduleNo;
+      	string scheduleName;
+      	string scheduleType;
+      	int sessionId;
+      	string sessionName;
+
+    public:
+    	Schedule();
+    	Schedule(int s_no, string s_name, string s_type);
+    	void displaySchedule();
+    	void setSessionDetails(int s_id, string se_name,Course *c);
+    	void addSession();
+    	~Schedule();
+};
