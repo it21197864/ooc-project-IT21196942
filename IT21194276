@@ -1,0 +1,80 @@
+/*Janaka Pruthuvi
+IT21194276
+Malabe
+Administrator and Support*/
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+//Implementing Administrator Class
+class Administrator{
+    private:
+        string administratorId;
+        string administratorName;
+        int adminContact;
+        int adminNIC;
+        int answerNo;
+        Support *sup;
+    public:
+    	Administrator();
+        Administrator(string a_id,string a_name,int a_contact, int a_nic);
+        void displayAdminDetails();
+        void postAnswer(int as_no);
+        ~Administrator();
+};
+//Implementing Support Class
+class Support{
+    private:
+        int questionNo;
+        string questionDate;
+        
+    public:
+    	Support();
+        Support(int q_no, string q_date);
+        void displayQuestion();
+        void postQuestion();
+        void replyToCustomers();
+        ~Support();
+};
+
+//Administartor class Function Implementation
+Administrator::Administrator(string a_id,string a_name,int a_contact, int a_nic){
+	administratorId = a_id;
+    administratorName = a_name;
+    adminContact = a_contact;
+    adminNIC = a_nic;
+}
+void Administrator::displayAdminDetails(){
+	cout<<"Student ID: "<<administratorId<<endl;
+	cout<<"Student Name: "<<administratorName<<endl;
+	cout<<"Student NIC: "<<adminContact<<endl;
+	cout<<"Student Date of Birth: "<<adminNIC<<endl;
+}
+void postAnswer(int as_no){
+	answerNo = as_no;
+}
+Administrator::~Administrator(){}
+//Implementing Support Functions
+Support::Support(int q_no, string q_date){
+	questionNo = q_no;
+    questionDate = q_date;
+}
+void Support::displayQuestion(){
+	cout<<"Question Number: "<<questionNo<<endl;
+	cout<<"Question Date: "<<questionDate<<endl;
+}
+void Support::postQuestion(){}
+void Support::replyToCustomers(){}
+Support::~Support(){}
+
+int main(){
+//constractor support
+Support *sp1 = new Support("Q1531","2022-03-15",a1);
+    sp1-> displayQuestion();
+    sp1-> postQuestion();
+    sp1-> replyToCustomers();
+Support *sp2 = new Support("Q1532","2022-03-15",a1);
+    sp2-> displayQuestion();
+    sp2-> postQuestion();
+    sp2-> replyToCustomers();
+}
