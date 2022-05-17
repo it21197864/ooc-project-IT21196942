@@ -1,0 +1,303 @@
+//class Course
+class Course{
+	protected:
+		string courseId;
+		string courseName;
+		string enrollKey;
+		string courseType;
+		string certificateNo;
+		string certificateName;
+		string certificateDate; 
+		Instructor *instructor;//BI-DIRECTIONAL ASSOCIATION
+		Student *student;//BI-DIRECTIONAL ASSOCIATION
+		Resources *resources;//UNI-DIRECTIONAL
+		
+	public:
+		Course();
+		Course(string id, string name, sring key, string type,Instructor *i,Student *s,Resources *r);
+		void displayCourseDetails();
+		void addNewCourses();
+		void genarateCourseCertificate(string id, string name, string type, string c_no, string c_name, string c_date); 
+		~Course();
+};
+//class Technician : class User;
+class Technician{
+    private:
+    	string technicianId;
+        string technicianName;
+        int technicianContact;
+        int notificatonNo;
+        string newFeature;
+    public:
+    	Technician();
+        Technician(string t_id, string t_name, int t_contact);
+        void displayTechicianDetails();
+        void addNewTechnician();
+        void sendNotification(string t_id, string t_name,int n_no);
+        void setNewFeature();
+        ~Technician();
+};
+//class User;
+class User{
+    protected:
+    	string email;
+        string password;
+		Register *register;//COMPOSITION
+		UserActivity *useractivity;//COMPOSITION
+    public:
+    	User();
+    	User(string em, string pswd,Register *rg,UserActivity *ua);
+        void setEmail(string em);
+        void setPassword(string pswd);
+        string verifyLogin();
+        ~User();
+};
+
+//class UserActivity;
+class UserActivity{
+    private: 
+        string lastLogin;
+        string timeLogged;
+        string loginStatus;
+
+    public:
+    	UserActivity();
+        string getLastLogin();
+        string getTimeLogged();
+        string getLoginStatus();
+        ~UserActivity();
+};
+
+//class Register;
+class Register{
+    private:
+        string registerEmail;
+        string firstName;
+        string lastName;
+        string registerPassword;
+        string registerDate;
+
+    public:
+    	Register();
+        Register(string r_email, string f_name, string l_name,string r_pswd, string r_date);
+        void login();
+        ~Register();
+};
+
+//class Visitor;
+class Visitor{
+    private:
+        string name;
+		Register *register;//UNI-DIRECTIONAL ASSOCIATION
+    public:
+    	Visitor();
+        void signUp(string nm, Register *rg);
+        void viewCourse();
+        ~Visitor();
+};
+//class Course
+Course::Course(string id, string name, sring key, string type,Instructor *i,Student *s,Resources *r){
+	courseId = id;
+	courseName = name;
+	enrollKey = key;
+	courseType = type;
+  ins = i;
+  stu = s;
+  res = r;
+}
+void Course::displayCourseDetails(){
+	cout<<"Course ID: "<<courseId<<endl;
+	cout<<"Course Name: "<<courseName<<endl;
+	cout<<"Enroll Key: "<<enrollKey<<endl;
+	cout<<"Course Type: "<<courseType<<endl;
+}
+void Course::addNewCourses(){
+	cout<<"Input Course ID: ";
+	cin>>courseId;
+	cout<<"Input Course Name: ";
+	cin>>courseName;
+	cout<<"Input Enroll Key: ";
+	cin>>enrollKey;
+	cout<<"Input Course Type: ";
+	cin>>courseType;
+}
+void Course:: genarateCourseCertificate(string id, string name, string type, string c_no, string c_name, string c_date){}
+Course::~Course(){}
+//class Technician
+Technician::Technician(string t_id, string t_name, int t_contact){
+	technicianId = t_id;
+    technicianName = t_name;
+    technicianContact = t_contact;
+}
+void Technician::addNewTechnician(){
+	cout<<"Input Technician ID: ";
+	cin>>technicianId;
+	cout<<"Input Technician Name: ";
+	cin>>technicianName;
+	cout<<"Input Technician Contact Number: ";
+	cin>>technicianContact;
+}
+void Technician::sendNotification(string t_id, string t_name,int n_no){
+	technicianId = t_id;
+    technicianName = t_name;
+    notificatonNo = n_no;
+}
+void Technician::setNewFeature(){}
+Technician::~Technician();
+//class Technician
+Technician::Technician(string t_id, string t_name, int t_contact){
+	technicianId = t_id;
+    technicianName = t_name;
+    technicianContact = t_contact;
+}
+void Technician::addNewTechnician(){
+	cout<<"Input Technician ID: ";
+	cin>>technicianId;
+	cout<<"Input Technician Name: ";
+	cin>>technicianName;
+	cout<<"Input Technician Contact Number: ";
+	cin>>technicianContact;
+}
+void Technician::sendNotification(string t_id, string t_name,int n_no){
+	technicianId = t_id;
+    technicianName = t_name;
+    notificatonNo = n_no;
+}
+void Technician::setNewFeature(){}
+Technician::~Technician();
+//class Technician
+Technician::Technician(string t_id, string t_name, int t_contact){
+	technicianId = t_id;
+    technicianName = t_name;
+    technicianContact = t_contact;
+}
+void Technician::addNewTechnician(){
+	cout<<"Input Technician ID: ";
+	cin>>technicianId;
+	cout<<"Input Technician Name: ";
+	cin>>technicianName;
+	cout<<"Input Technician Contact Number: ";
+	cin>>technicianContact;
+}
+void Technician::sendNotification(string t_id, string t_name,int n_no){
+	technicianId = t_id;
+    technicianName = t_name;
+    notificatonNo = n_no;
+}
+void Technician::setNewFeature(){}
+Technician::~Technician();
+//class User
+User::User(string em, string pswd,Register *rg,UserActivity *ua){
+	email = em;
+    password = pswd;
+   reg = rg;
+    useract = ua;
+}
+void User::setEmail(string em){
+	email = em;
+}
+void User::setPassword(string pswd){
+	password = pswd;
+}
+string User::verifyLogin(){}
+User::~User(){}
+
+//class UserActivity
+UserActivity::UserActivity(string ll, string tl,string ls){
+	lastLogin = ll;
+    timeLogged = tl;
+    loginStatus = ls;
+}
+string UserActivity::getLastLogin(){}
+string UserActivity::getTimeLogged(){}
+string UserActivity::getLoginStatus(){}
+UserActivity::~UserActivity(){}
+
+//class Register
+Register::Register(string r_email, string f_name, string l_name,string r_pswd, string r_date){
+	registerEmail = r_email;
+    firstName = f_name;
+    lastName = l_name;
+	registerPassword = r_pswd;
+    registerDate = r_date;
+}
+void Register::login(){}
+Register::~Register(){}
+
+//class Visitor
+Visitor::Visitor(string v_name){
+	name = v_name;
+}
+void Visitor::signUp(string nm, Register *rg){}
+void Visitor::viewCourse(){}
+Visitor::~Visitor(){}
+//constructor Course
+   Course *c1 = new Course("CC001","Basic Training Certificate","EKcc001","Certificate Course");
+    c1->displayCourseDetails();
+    c1->addNewCourses();
+    c1-> genarateCourseCertificate();
+   Course *c2 = new Course("CC002","Primary Training Certificate","EKcc002","Certificate course");
+    c2->displayCourseDetails();
+    c2->addNewCourses();
+    c2-> genarateCourseCertificate();
+ 
+  //constructor Schedule
+   Schedule *s1 = new Schedule(001,"Schedule 01","Lectures");
+     s1->displaySchedule();
+     s1->setSessionDetails();
+     s1->addSession();
+    Schedule *s2 = new Schedule(002,"Schedule 02","labs");
+     s2->displaySchedule();
+     s2->setSessionDetails();
+     s2->addSession();
+    Schedule *s3 = new Schedule(003,"Schedule 03","Revision");
+      s3->displaySchedule();
+      s3->setSessionDetails();
+      s3->addSession();
+        
+  //constractor User
+  User *u1 = new User("shaliimeshi@gmail.com","Iloveteacher001",ua1);
+     u1->setEmail(string em);
+     u1-> setPassword(string pswd);
+     u1-> verifyLogin();
+  
+    User *u2 = new User("ovins@yahoo.com","Blackeyes534",ua2);
+    u2->setEmail(string em);
+     u2-> setPassword(string pswd);
+     u2-> verifyLogin();
+    User *u3 = new User("Lakindu004@gmail.com","Sleepingbeauty@3",ua3);
+    u3->setEmail(string em);
+     u3-> setPassword(string pswd);
+     u3-> verifyLogin();
+ 
+  //constractor UserActivity
+     UserActivity *ua1 = new UserActivity("17:00:00","14:45:00","Offline");
+      ua1->getLastLogin();
+      ua1-> getTimeLogged();
+      ua1-> getLoginStatus();
+  
+  UserActivity *ua2 = new UserActivity("20:00:00","19:45:00","Offline");
+       ua2->getLastLogin();
+      ua2-> getTimeLogged();
+      ua2-> getLoginStatus();
+  
+  UserActivity *ua3 = new UserActivity("16:00:00","","Online");
+        ua3->getLastLogin();
+      ua3-> getTimeLogged();
+      ua3-> getLoginStatus();
+  
+  //constractor Register
+  Register *rg1 = new Register(u1,"Shaliniya","Imeshini","2012-07-10");
+      rg1->login();
+    Register *rg1 = new Register(u1,"Ovini","Yazara","2010-04-14");
+      rg1->login();
+    Register *rg1 = new Register(u1,"Lakindu","Gathsara","2020-02-05");
+     rg1->login();
+  //constractor Visitor
+  Visitor *v1 = new Visitor("Janka Pruthuvi");
+        v1-> signUp(string nm, Register *rg);
+        v1-> viewCourse();
+  Visitor *v2 = new Visitor("Deshitha Thejan");
+        v2->signUp(string nm, Register *rg);
+        v2-> viewCourse();
+}
