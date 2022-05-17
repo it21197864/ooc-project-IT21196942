@@ -1,0 +1,132 @@
+Exam::Exam(string e_id, string e_name, string e_type, string e_date){
+	examId = e_id;
+    examName = e_name;
+    examType = e_type;
+    examDate = e_date;
+}
+void Exam::setExamGrade(string e_id,string e_name, char gr,Course *c){
+	examId = e_id;
+    examName = e_name;
+    grade = gr;
+}
+void Exam::getExamParticipation(){}
+void Exam::displayExamDetails(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Exam type: "<<examType<<endl;
+	cout<<"Exam Date: "<<examDate<<endl;
+}
+void Exam::displayExamGrade(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Grade: "<<grade<<endl;
+}
+Exam::~Exam(){}
+
+//class Student
+Student::Student(string s_id, string s_name, int s_nic, string s_dob,Course *c){
+	studentId = s_id;
+    studentName = s_name;
+    studentNIC = s_nic;
+    studentDateOfBirth = s_dob;
+}
+void Student::displayStudentDetails(){
+	cout<<"Student ID: "<<studentId<<endl;
+	cout<<"Student Name: "<<studentName<<endl;
+	cout<<"Student NIC: "<<studentNIC<<endl;
+	cout<<"Student Date of Birth: "<<studentDateOfBirth<<endl;
+}
+void Student::markStudentParticipation(string s_id, string s_name, int s_nic,string m_name, string a_date){}
+void Student::askQuestions(string s_id, string s_name, string stq_no,Support *sp){
+	
+}
+Student::~Student(){}
+
+//class Student
+Student::Student(string s_id, string s_name, int s_nic, string s_dob,Course *c){
+	studentId = s_id;
+    studentName = s_name;
+    studentNIC = s_nic;
+    studentDateOfBirth = s_dob;
+}
+void Student::displayStudentDetails(){
+	cout<<"Student ID: "<<studentId<<endl;
+	cout<<"Student Name: "<<studentName<<endl;
+	cout<<"Student NIC: "<<studentNIC<<endl;
+	cout<<"Student Date of Birth: "<<studentDateOfBirth<<endl;
+}
+void Student::markStudentParticipation(string s_id, string s_name, int s_nic,string m_name, string a_date){}
+void Student::askQuestions(string s_id, string s_name, string stq_no,Support *sp){
+	
+}
+Student::~Student(){}
+
+//class Exam
+Exam::Exam(string e_id, string e_name, string e_type, string e_date){
+	examId = e_id;
+    examName = e_name;
+    examType = e_type;
+    examDate = e_date;
+}
+void Exam::setExamGrade(string e_id,string e_name, char gr,Course *c){
+	examId = e_id;
+    examName = e_name;
+    grade = gr;
+}
+void Exam::getExamParticipation(){}
+void Exam::displayExamDetails(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Exam type: "<<examType<<endl;
+	cout<<"Exam Date: "<<examDate<<endl;
+}
+void Exam::displayExamGrade(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Grade: "<<grade<<endl;
+}
+Exam::~Exam(){}
+//class Student
+Student::Student(string s_id, string s_name, int s_nic, string s_dob,Course *c){
+	studentId = s_id;
+    studentName = s_name;
+    studentNIC = s_nic;
+    studentDateOfBirth = s_dob;
+}
+void Student::displayStudentDetails(){
+	cout<<"Student ID: "<<studentId<<endl;
+	cout<<"Student Name: "<<studentName<<endl;
+	cout<<"Student NIC: "<<studentNIC<<endl;
+	cout<<"Student Date of Birth: "<<studentDateOfBirth<<endl;
+}
+void Student::markStudentParticipation(string s_id, string s_name, int s_nic,string m_name, string a_date){}
+void Student::askQuestions(string s_id, string s_name, string stq_no,Support *sp){
+	
+}
+Student::~Student(){}
+//class Exam
+Exam::Exam(string e_id, string e_name, string e_type, string e_date){
+	examId = e_id;
+    examName = e_name;
+    examType = e_type;
+    examDate = e_date;
+}
+void Exam::setExamGrade(string e_id,string e_name, char gr,Course *c){
+	examId = e_id;
+    examName = e_name;
+    grade = gr;
+}
+void Exam::getExamParticipation(){}
+void Exam::displayExamDetails(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Exam type: "<<examType<<endl;
+	cout<<"Exam Date: "<<examDate<<endl;
+}
+void Exam::displayExamGrade(){
+	cout<<"Exam ID: "<<examId<<endl;
+	cout<<"Exam Name: "<<examName<<endl;
+	cout<<"Grade: "<<grade<<endl;
+}
+Exam::~Exam(){}
+
