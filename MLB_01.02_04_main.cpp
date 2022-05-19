@@ -1,7 +1,7 @@
 #include<iostream>
 #include <string>
 #include <iomanip>
-#include "online teacher training.h"
+#include "online teacher training.h" 
 using namespace std;
 
 //-----Prototype Classes-----
@@ -52,47 +52,47 @@ int main(){
          r2-> addNewResource();
        	r2-> displayResources();
   //constrctor Student 
-  Student *n1 = new Student("BT02347121","Shaliniya Imeshini","200201456155","1999-05-03",c1);
+  Student *n1 = new Student("BT02347121","Shaliniya Imeshini","200201456155","1999-05-03",c1,"shaliimeshi@gmail.com","Iloveteacher001",rg1,ua1);
      n1->displayStudentDetails();
      n1-> markStudentParticipation();
      n1-> askQuestions();
-   Student *n2 = new Student("BT04184810","Ovini Yazara'","1998153601V","1997-08-20",c2);
+   Student *n2 = new Student("BT04184810","Ovini Yazara'","1998153601V","1997-08-20",c2,"ovins@yahoo.com","Blackeyes534",rg2,ua2);
      n2->displayStudentDetails();
      n2-> markStudentParticipation();
      n2-> askQuestions();
-   Student *n3 = new Student("DE01053443","Lakindu Gathsara","200130002616","1990-10-12",c1);
+   Student *n3 = new Student("DE01053443","Lakindu Gathsara","200130002616","1990-10-12",c1,"Lakindu004@gmail.com","Sleepingbeauty@3",rg3,ua3);
      n3->displayStudentDetails();
      n3-> markStudentParticipation();
      n3-> askQuestions();
   //constructor Technician
-  Technician *t1 = new Techncian("Tec01","Gaveesh Nuwan","0119988822");
+  Technician *t1 = new Techncian("Tec01","Gaveesh Nuwan","0119988822","gaveesh@sllitex.com","Bluewhite05",ua8);
       t1->displayTechicianDetails();
       t1-> addNewTechnician();
       t1-> sendNotification();
       t1-> setNewFeature();
-   Technician *t2 = new Techncian("Tec02","Suren Kamishka","0119988823");
+   Technician *t2 = new Techncian("Tec02","Suren Kamishka","0119988823","suren@sllitex.com","#2suren",ua9);
        t2->displayTechicianDetails();
       t2-> addNewTechnician();
       t2-> sendNotification();
       t2-> setNewFeature();
   //constructor Instructor
-  Instructor *i1 = new Instructor("In1001","Thisara Dewind","0771019977",c1);
+  Instructor *i1 = new Instructor("In1001","Thisara Dewind","0771019977",c1,"Thisara.Ins@sllitex.co","Makeit001@",ua4);
       i1->displayInstructorDetails();
        i1->getparticiipation();
        i1-> addNewInstructors();
       i1->setInstructorActivities();
-   Instructor *i2 = new Instructor("In1002","Sachintha hasaranga","0773321546",c2);
+   Instructor *i2 = new Instructor("In1002","Sachintha hasaranga","0773321546",c2,"Sachi.Ins@sllitex.com","23456@INS",ua5);
      i2->displayInstructorDetails();
        i2->getparticiipation();
        i2-> addNewInstructors();
       i2->setInstructorActivities();
-    Instructor *i3 = new Instructor("In1003","Rivi Abhishek","0766998881",c2);
+    Instructor *i3 = new Instructor("In1003","Rivi Abhishek","0766998881",c2,"Rivi.Ins@sllitex.com","Dostudy123",ua6);
      i3->displayInstructorDetails();
        i3->getparticiipation();
        i3-> addNewInstructors();
       i3->setInstructorActivities();
   //constructor Administrator
-  Administrator *a1 = new Administrator("A0001'","Oshan Dias","0778991001","68195662V");
+  Administrator *a1 = new Administrator("A0001'","Oshan Dias","0778991001","68195662V","oshan@sllitex.com","Aid001@",ua7);
        a1->displayAdminDetails();
 		   a1->postAnswers(string a_id,Support *sp);
 		   a1-> uploadResources();
@@ -130,10 +130,44 @@ int main(){
     u2->setEmail(string em);
      u2-> setPassword(string pswd);
      u2-> verifyLogin();
+  
     User *u3 = new User("Lakindu004@gmail.com","Sleepingbeauty@3",ua3);
     u3->setEmail(string em);
      u3-> setPassword(string pswd);
      u3-> verifyLogin();
+  
+   User *u4 = new User("Thisara.Ins@sllitex.co","Makeit001@",ua4);
+    u4->setEmail(string em);
+     u4-> setPassword(string pswd);
+     u4-> verifyLogin();
+  
+  User *u5 = new User("Sachi.Ins@sllitex.com","23456@INS",ua5);
+    u5->setEmail(string em);
+     u5-> setPassword(string pswd);
+     u5-> verifyLogin();
+  
+  User *u6 = new User("Rivi.Ins@sllitex.com","Dostudy123",ua6);
+    u6->setEmail(string em);
+     u6-> setPassword(string pswd);
+     u6-> verifyLogin();
+  
+  User *u7= new User("oshan@sllitex.com","Aid001@",ua7);
+    u7->setEmail(string em);
+     u7-> setPassword(string pswd);
+     u7-> verifyLogin();
+  
+  User *u8 = new User("gaveesh@sllitex.com","Bluewhite05",ua8);
+    u8->setEmail(string em);
+     u8-> setPassword(string pswd);
+     u8-> verifyLogin();
+  
+  User *u9 = new User("suren@sllitex.com","#2suren",ua9);
+    u9->setEmail(string em);
+     u9-> setPassword(string pswd);
+     u9-> verifyLogin();
+  
+  
+
  
   //constractor UserActivity
      UserActivity *ua1 = new UserActivity("17:00:00","14:45:00","Offline");
@@ -150,7 +184,32 @@ int main(){
         ua3->getLastLogin();
       ua3-> getTimeLogged();
       ua3-> getLoginStatus();
-  
+
+   UserActivity *ua4 = new UserActivity("09:54:00","","Online");
+        ua4->getLastLogin();
+      ua4-> getTimeLogged();
+      ua4-> getLoginStatus();
+   UserActivity *ua5 = new UserActivity("18:00:00","18:30:00","Offline");
+        ua5->getLastLogin();
+      ua5-> getTimeLogged();
+      ua5-> getLoginStatus();
+   UserActivity *ua6 = new UserActivity("16:00:00","","Online");
+        ua6->getLastLogin();
+      ua6-> getTimeLogged();
+      ua6-> getLoginStatus();
+   UserActivity *ua7 = new UserActivity("16:45:00","19:00:00","Offline");
+        ua7->getLastLogin();
+      ua7-> getTimeLogged();
+      ua7-> getLoginStatus();
+   UserActivity *ua8 = new UserActivity("16:00:00","","Online");
+        ua8->getLastLogin();
+      ua8-> getTimeLogged();
+      ua8-> getLoginStatus();
+   UserActivity *ua9 = new UserActivity("10:29:00","14:40:00","Offline");
+        ua9->getLastLogin();
+      ua9-> getTimeLogged();
+      ua9-> getLoginStatus();
+
   //constractor Register
   Register *rg1 = new Register(u1,"Shaliniya","Imeshini","2012-07-10");
       rg1->login();
