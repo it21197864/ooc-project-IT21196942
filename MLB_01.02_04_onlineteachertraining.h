@@ -59,8 +59,8 @@ class Resources{
        	~Resources();
 };
 
-//class Student : class User;
-class Student{
+//class Student ;
+class Student: public User{
    private:
        	string studentId;
        	string studentName;
@@ -69,28 +69,29 @@ class Student{
        	string moduleName;
        	string attendDate;
        	int studentQuestionNo;
-		Course *course;//BI-DIRECTIONAL ASSOCIATION
+		    Course *course;//BI-DIRECTIONAL ASSOCIATION
        	
    public:
    		Student();
-    	Student(string s_id, string s_name, int s_nic, string s_dob,Course *c);
+    	Student(string s_id, string s_name, int s_nic, string s_dob,Course *c,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua);
         void displayStudentDetails();
         void markStudentParticipation(string s_id, string s_name, int s_nic,string m_name, string a_date);
         void askQuestions(string s_id, string s_name, string stq_no,Support *sp);
         ~Student();
 };
 
-//class Technician : class User;
-class Technician{
+//class Technician;
+class Technician: public User{
     private:
     	string technicianId;
         string technicianName;
         int technicianContact;
         int notificatonNo;
         string newFeature;
+
     public:
     	Technician();
-        Technician(string t_id, string t_name, int t_contact);
+        Technician(string t_id, string t_name, int t_contact,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua);
         void displayTechicianDetails();
         void addNewTechnician();
         void sendNotification(string t_id, string t_name,int n_no);
@@ -98,8 +99,8 @@ class Technician{
         ~Technician();
 };
 
-//class Instructor: class User;
-class Instructor{
+//class Instructor;
+class Instructor: public User{
     private:
         string instructorId;
         string intructorName;
@@ -108,16 +109,16 @@ class Instructor{
         
     public:
     	Instructor();
-        Instructor(string i_id, string i_name, int i_contactno,Course *c);
-        void displayInstructorDetails();
+        Instructor(string i_id, string i_name, int i_contactno,Course *c,string em, string pswd,Register *rg,UserActivity *ua):User(em,pswd,*rg,*ua);
+        void displayInstructorDetails();a
         void getparticiipation();
         void addNewInstructors();
         void setInstructorActivities();
         ~Instructor();
 };
 
-//class Administrator : class User;
-class Administrator{
+//class Administrator;
+class Administrator : public User{
     private:
         string administratorId;
         string administratorName;
@@ -127,7 +128,7 @@ class Administrator{
 
     public:
     	Administrator();
-        Administrator(string a_id,string a_name,int a_contact, int a_nic);
+        Administrator(string a_id,string a_name,int a_contact, int a_nic,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua);
         void displayAdminDetails()
 		void postAnswers(string a_id,Support *sp);
 		void uploadResources();
@@ -176,6 +177,7 @@ class User{
         string password;
 		Register *register;//COMPOSITION
 		UserActivity *useractivity;//COMPOSITION
+
     public:
     	User();
     	User(string em, string pswd,Register *rg,UserActivity *ua);
@@ -221,6 +223,7 @@ class Visitor{
     private:
         string name;
 		Register *register;//UNI-DIRECTIONAL ASSOCIATION
+
     public:
     	Visitor();
         void signUp(string nm, Register *rg);
