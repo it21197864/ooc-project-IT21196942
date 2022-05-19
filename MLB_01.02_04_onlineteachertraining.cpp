@@ -1,5 +1,5 @@
 #include<iostream>
-#include'online teacher training.h'
+#include"online teacher training.h"
 using std::string;
 
 //-----Implementing Functions----
@@ -76,7 +76,7 @@ void Schedule::displayResources(){
 Resources::~Resources(){}
 
 //class Student
-Student::Student(string s_id, string s_name, int s_nic, string s_dob,Course *c){
+Student::Student(string s_id, string s_name, int s_nic, string s_dob,Course *c,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua){
 	studentId = s_id;
     studentName = s_name;
     studentNIC = s_nic;
@@ -90,13 +90,11 @@ void Student::displayStudentDetails(){
 	cout<<"Student Date of Birth: "<<studentDateOfBirth<<endl;
 }
 void Student::markStudentParticipation(string s_id, string s_name, int s_nic,string m_name, string a_date){}
-void Student::askQuestions(string s_id, string s_name, string stq_no,Support *sp){
-	
-}
+void Student::askQuestions(string s_id, string s_name, string stq_no,Support *sp){}
 Student::~Student(){}
 
 //class Technician
-Technician::Technician(string t_id, string t_name, int t_contact){
+Technician::Technician(string t_id, string t_name, int t_contact,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua){
 	technicianId = t_id;
     technicianName = t_name;
     technicianContact = t_contact;
@@ -118,7 +116,7 @@ void Technician::setNewFeature(){}
 Technician::~Technician();
 
 //class Instructor
-Instructor::Instructor(string i_id, string i_name, int i_contactno,Course *c){
+Instructor::Instructor(string i_id, string i_name, int i_contactno,Course *c,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua){
 	instructorId = i_id;
     intructorName = i_name;
     instructorContactNo = i_contactno;
@@ -142,7 +140,7 @@ void Instructor::setInstructorActivities(){}
 Instructor::~Instructor(){}
 
 //class Administrator
-Administrator::Administrator(string a_id,string a_name,int a_contact, int a_nic){
+Administrator::Administrator(string a_id,string a_name,int a_contact, int a_nic,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua){
 	administratorId = a_id;
     administratorName = a_name;
     adminContact = a_contact;
