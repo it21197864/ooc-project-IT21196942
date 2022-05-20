@@ -1,0 +1,43 @@
+//class Resources;
+class Resources{
+    private:
+       string resourceId;
+       string resourceName;
+       string resourceType;
+
+    public:
+    	Resources();
+    	Resources(string r_id, string r_name, string r_type);
+       	void addNewResource();
+       	void displayResources();
+       	~Resources();
+};
+
+//class Resources
+Schedule::Resources(string r_id, string r_name, string r_type){
+	resourceId = r_id;
+    resourceName = r_name;
+    resourceType = r_type;
+}
+void Schedule::addNewResource(){
+	cout<<"Input Resource ID: ";
+	cin>>resourceId;
+	cout<<"Input Resource Name: ";
+	cin>>resourceName;
+	cout<<"Input Resource Type: ";
+	cin>>resourceType;
+}
+void Schedule::displayResources(){
+	cout<<"Resource ID: "<<resourceId<<endl;
+	cout<<"Resource Name: "<<resourceName<<endl;
+	cout<<"Resource Type: "<<resourceType<<endl;
+}
+Resources::~Resources(){}
+
+//constructor Resources
+   Resources *r1 = new Resources("R5141","Teach Like a Pride","E-book");
+        r1-> addNewResource();
+       	r1-> displayResources();
+   Resources *r2 = new Resources("R5142","The freedom writer diary","Magazine");
+         r2-> addNewResource();
+       	r2-> displayResources();
