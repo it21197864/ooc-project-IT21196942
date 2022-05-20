@@ -1,22 +1,5 @@
-//class schedule
-class Schedule{
-   private:
-    	int scheduleNo;
-      	string scheduleName;
-      	string scheduleType;
-      	int sessionId;
-      	string sessionName;
-
-    public:
-    	Schedule();
-    	Schedule(int s_no, string s_name, string s_type);
-    	void displaySchedule();
-    	void setSessionDetails(int s_id, string se_name,Course *c);
-    	void addSession();
-    	~Schedule();
-};
-//class Instructor: class User;
-class Instructor{
+//class Instructor;
+class Instructor: public User{
     private:
         string instructorId;
         string intructorName;
@@ -25,10 +8,49 @@ class Instructor{
         
     public:
     	Instructor();
-        Instructor(string i_id, string i_name, int i_contactno,Course *c);
-        void displayInstructorDetails();
+        Instructor(string i_id, string i_name, int i_contactno,Course *c,string em, string pswd,Register *rg,UserActivity *ua):User(em,pswd,*rg,*ua);
+        void displayInstructorDetails();a
         void getparticiipation();
         void addNewInstructors();
         void setInstructorActivities();
         ~Instructor();
 };
+//class Instructor
+Instructor::Instructor(string i_id, string i_name, int i_contactno,Course *c,string em, string pswd,Register *rg,UserActivity *ua:):User(em,pswd,*rg,*ua){
+	instructorId = i_id;
+    intructorName = i_name;
+    instructorContactNo = i_contactno;
+   cour = c;
+}
+void Instructor::displayInstructorDetails(){
+	cout<<"Instructor ID: "<<instructorId<<endl;
+	cout<<"Instructor Name: "<<intructorName<<endl;
+	cout<<"Instructor Contact number: "<<instructorContactNo<<endl;
+}
+void Instructor::getparticiipation(){}
+void Instructor::addNewInstructors(){
+	cout<<"Input Instructor ID: ";
+	cin>>instructorId;
+	cout<<"Input Instructor Name: ";
+	cin>>intructorName;
+	cout<<"Input Instructor Contact Number: ";
+	cin>>instructorContactNo;
+}
+void Instructor::setInstructorActivities(){}
+Instructor::~Instructor(){}
+//constructor Instructor
+  Instructor *i1 = new Instructor("In1001","Thisara Dewind","0771019977",c1,"Thisara.Ins@sllitex.co","Makeit001@",ua4);
+      i1->displayInstructorDetails();
+       i1->getparticiipation();
+       i1-> addNewInstructors();
+      i1->setInstructorActivities();
+   Instructor *i2 = new Instructor("In1002","Sachintha hasaranga","0773321546",c2,"Sachi.Ins@sllitex.com","23456@INS",ua5);
+     i2->displayInstructorDetails();
+       i2->getparticiipation();
+       i2-> addNewInstructors();
+      i2->setInstructorActivities();
+    Instructor *i3 = new Instructor("In1003","Rivi Abhishek","0766998881",c2,"Rivi.Ins@sllitex.com","Dostudy123",ua6);
+     i3->displayInstructorDetails();
+       i3->getparticiipation();
+       i3-> addNewInstructors();
+      i3->setInstructorActivities();
